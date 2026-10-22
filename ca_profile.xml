@@ -1,0 +1,9 @@
+<CommunityApplications>
+  <Profile>
+**dmOffice** - a self-hosted, Outlook-like office suite: mail, calendar, contacts, tasks, notes and files with its own CalDAV, CardDAV and WebDAV server and an encrypted database per user.
+
+This repository holds the Unraid template; the project itself is at https://github.com/Taloan/dmOffice and the image is built to `ghcr.io/taloan/dmoffice`. Questions and bug reports: GitHub issues or the support thread on the Unraid forum.
+  </Profile>
+  <Icon>https://raw.githubusercontent.com/Taloan/unraid-templates/main/dmoffice.png</Icon>
+  <WebPage>https://github.com/Taloan/dmOffice</WebPage>
+</CommunityApplications>
