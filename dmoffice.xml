@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
 <!--
   Unraid template for dmOffice (Community Applications). The image is built by .github/workflows/docker.yml to
-  ghcr.io/taloan/dmoffice. To use the image of your own Gitea instead (.gitea/workflows/docker.yml), enter
-  127.0.0.1:<port>/<owner>/dmoffice:latest under Repository. Setup: README of https://github.com/Taloan/dmOffice, section "Unraid".
+  ghcr.io/taloan/dmoffice. Setup: README of https://github.com/Taloan/dmOffice, section "Unraid".
 
   DMOFFICE_MASTER_KEY wraps the keys of the user databases. It is stored only here (on the USB flash drive), not in
   the data directory - anyone who copies appdata cannot read anything with it. Losing it means losing the data. Keep it safe.
@@ -26,6 +25,9 @@ Set DMOFFICE_MASTER_KEY to a long random value (e.g. openssl rand -hex 32) and k
   <Category>Productivity: Cloud:</Category>
   <Changes>[b]Updating[/b]
 Before a data change dmOffice checks the free space, makes its own encrypted backup of the databases (appdata/pre-update, removed after 14 days) and asks before big conversions (Administration, Updates). If there is not enough space nothing is changed and the page says how much is missing. A copy of the appdata folder before the update is still the best insurance. To go back: pin the previous image version (e.g. ghcr.io/taloan/dmoffice:1.1.0) and copy the databases from pre-update back into users. Details: https://github.com/Taloan/dmOffice/blob/master/docs/updating.md
+
+[b]2.0.1[/b]
+Maintenance release based on 2.0.0.
 
 [b]2.0.0[/b]
 New: chat with the assistant Pukki, gallery with photo editing, music, vault, documents (DMS), overview, external folders, core backup, data export, spam filter, Microsoft accounts. Update the server first, then the Android app - the 2.0 app needs a 2.0 server. Data changes: schema 19-21 (backup before, as above); going back to 1.5 is not supported, so copy the appdata folder first. dmOffice no longer runs as root: on the first start it hands /data to user 1654, or to DMOFFICE_UID/DMOFFICE_GID (99/100 is usual on Unraid) - set these if dmOffice should write to mounted shares. Release notes: https://github.com/Taloan/dmOffice/releases/tag/v2.0.0
