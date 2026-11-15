@@ -26,6 +26,9 @@ Set DMOFFICE_MASTER_KEY to a long random value (e.g. openssl rand -hex 32) and k
   <Changes>[b]Updating[/b]
 Before a data change dmOffice checks the free space, makes its own encrypted backup of the databases (appdata/pre-update, removed after 14 days) and asks before big conversions (Administration, Updates). If there is not enough space nothing is changed and the page says how much is missing. A copy of the appdata folder before the update is still the best insurance. To go back: pin the previous image version (e.g. ghcr.io/taloan/dmoffice:1.1.0) and copy the databases from pre-update back into users. Details: https://github.com/Taloan/dmOffice/blob/master/docs/updating.md
 
+[b]2.1.0[/b]
+New: sign-in with OIDC, OpenPGP for mail, catch-all aliases, calendar search, file categories and tags, own SFTP folders, restore command for the core backup, optional ClamAV virus scanning. Update the server first, then the Android app. Admins: SFTP folders and home-network addresses for users have their own switches under Admin, Storage, User mounts. Release notes: https://github.com/Taloan/dmOffice/releases/tag/v2.1.0
+
 [b]2.0.2[/b]
 Documents: learned correspondents, document types and tags are re-evaluated in the inbox. Vault: setup from the files menu; opening asks for the password again after the vault was closed.
 
