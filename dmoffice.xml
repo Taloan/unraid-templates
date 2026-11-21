@@ -14,7 +14,7 @@
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/Taloan/dmOffice/issues</Support>
+  <Support>https://forums.unraid.net/topic/201365-support-taloan-dmoffice/</Support>
   <Project>https://github.com/Taloan/dmOffice</Project>
   <ReadMe>https://github.com/Taloan/dmOffice#readme</ReadMe>
   <Overview>dmOffice is a self-hosted office suite in the browser: mail, calendar, contacts, tasks, notes and files. Mail has IMAP/SMTP with many accounts, a local copy with attachments, full-text search, rules, categories and a learning junk filter. Files come with previews, full-text search, recycle bin, previous versions, sharing with other users and by link, and editing of Word, Excel and PowerPoint documents in the browser through your own Collabora or ONLYOFFICE server.&#xD;
