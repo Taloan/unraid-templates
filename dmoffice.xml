@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <!--
   Unraid template for dmOffice (Community Applications). The image is built by .github/workflows/docker.yml to
-  ghcr.io/taloan/dmoffice. Setup: README of https://github.com/Taloan/dmOffice, section "Unraid".
+  ghcr.io/taloan/dmoffice and mirrored to Docker Hub (taloan/dmoffice). Setup: README of https://github.com/Taloan/dmOffice, section "Unraid".
 
   DMOFFICE_MASTER_KEY wraps the keys of the user databases. It is stored only here (on the USB flash drive), not in
   the data directory - anyone who copies appdata cannot read anything with it. Losing it means losing the data. Keep it safe.
 -->
 <Container version="2">
   <Name>dmOffice</Name>
-  <Repository>ghcr.io/taloan/dmoffice:latest</Repository>
-  <Registry>https://github.com/Taloan/dmOffice/pkgs/container/dmoffice</Registry>
+  <Repository>taloan/dmoffice:latest</Repository>
+  <Registry>https://hub.docker.com/r/taloan/dmoffice</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>bash</Shell>
@@ -24,7 +24,7 @@ It ships its own CalDAV, CardDAV and WebDAV server with app passwords, so phones
 Set DMOFFICE_MASTER_KEY to a long random value (e.g. openssl rand -hex 32) and keep it safe: without it the databases cannot be opened. The first visit of the web UI creates the admin account. For access from outside use HTTPS through your reverse proxy. More at https://dmoffice.de (German) and in the README on GitHub.</Overview>
   <Category>Productivity: Cloud:</Category>
   <Changes>[b]Updating[/b]
-Before a data change dmOffice checks the free space, makes its own encrypted backup of the databases (appdata/pre-update, removed after 14 days) and asks before big conversions (Administration, Updates). If there is not enough space nothing is changed and the page says how much is missing. A copy of the appdata folder before the update is still the best insurance. To go back: pin the previous image version (e.g. ghcr.io/taloan/dmoffice:1.1.0) and copy the databases from pre-update back into users. Details: https://github.com/Taloan/dmOffice/blob/master/docs/updating.md
+Before a data change dmOffice checks the free space, makes its own encrypted backup of the databases (appdata/pre-update, removed after 14 days) and asks before big conversions (Administration, Updates). If there is not enough space nothing is changed and the page says how much is missing. A copy of the appdata folder before the update is still the best insurance. To go back: pin the previous image version (e.g. taloan/dmoffice:2.1.0; versions before 2.1.0 only as ghcr.io/taloan/dmoffice:2.0.2) and copy the databases from pre-update back into users. Details: https://github.com/Taloan/dmOffice/blob/master/docs/updating.md
 
 [b]2.1.0[/b]
 New: sign-in with OIDC, OpenPGP for mail, catch-all aliases, calendar search, file categories and tags, own SFTP folders, restore command for the core backup, optional ClamAV virus scanning. Update the server first, then the Android app. Admins: SFTP folders and home-network addresses for users have their own switches under Admin, Storage, User mounts. Release notes: https://github.com/Taloan/dmOffice/releases/tag/v2.1.0
